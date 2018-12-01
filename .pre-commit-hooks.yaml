@@ -1,0 +1,6 @@
+-   id: postgres
+    name: postgres
+    description: "Check psql formatting"
+    entry: postgres
+    types: [sql]
+    language: script

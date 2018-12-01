@@ -1,0 +1,19 @@
+#!/bin/bash
+
+pg_format=`which pg_format`
+pg_format_found=$?
+
+if [ $pg_format_found -eq 1 ]; then
+    echo please install pg_format:;
+    echo 'https://github.com/darold/pgFormatter';
+    exit 1;
+else
+    $pg_format "$@" > /tmp/pg_format_sql_tmp.sql || exit 1;
+    diff "$@" /tmp/pg_format_sql_tmp.sql > /dev/null 2>/dev/null;
+    code=$?;
+    
+    if [ $code -eq 1 ]; then
+        cp /tmp/pg_format_sql_tmp.sql "$@";
+        exit 1;
+    fi
+fi
