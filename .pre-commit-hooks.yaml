@@ -7,6 +7,6 @@
 -   id: message
     name: commit-message
     description: "Validate commit message"
-    entry: message
+    entry: message.py
     stages: [commit-msg]
     language: script
