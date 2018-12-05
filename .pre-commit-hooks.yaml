@@ -8,5 +8,5 @@
     name: commit-message
     description: "Validate commit message"
     entry: message
-    stages: commit-msg
+    stages: [commit-msg]
     language: script
