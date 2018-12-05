@@ -4,3 +4,9 @@
     entry: postgres
     types: [sql]
     language: script
+-   id: message
+    name: commit-message
+    description: "Validate commit message"
+    entry: message
+    stages: commit-msg
+    language: script
